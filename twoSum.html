@@ -18,21 +18,23 @@
      * 5.1. push the index number of first and second in empty array and break the loop
      * 6. return the array
      */
-    const input = [3, 3];
-    const target = 6;
+    const input = [2, 5, 5, 11];
+    const target = 10;
     // output = [0, 1];
-    const arr = [];
-    function findTwoSum(input, target) {
-      for (let i = 0; i < input.length; i++) {
-        let result = input[i] + input[i + 1];
-        if (result === target) {
-          arr.push(i);
-          arr.push(i + 1);
-          break;
+
+    var twoSum = function (nums, target) {
+      const arr = [];
+      for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+          let result = nums[i] + nums[j];
+          if (result === target) {
+            arr.push(i, j);
+            return arr;
+          }
         }
       }
       return arr;
-    }
-    console.log(findTwoSum(input, target));
+    };
+    console.log(twoSum(input, target));
   </script>
 </html>
