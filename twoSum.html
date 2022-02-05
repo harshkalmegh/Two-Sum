@@ -23,11 +23,18 @@
     // output = [0, 1];
 
     var twoSum = function (nums, target) {
+      if (!nums || !target || !Array.isArray(nums)) {
+        return "Enter Proper Value";
+      }
+      const _target = parseInt(target);
+      if (isNaN(_target)) {
+        return "Please Enter Number";
+      }
       const arr = [];
       for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
           let result = nums[i] + nums[j];
-          if (result === target) {
+          if (result === _target) {
             arr.push(i, j);
             return arr;
           }
