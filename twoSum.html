@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * Algorithm
+     * 1. create a function to find two sum accepts two arguments input (array) & target
+     * 2. handle edgecase (return Enter proper value)
+     * 3. loop the array
+     * 4. add the first index to second index (i + 1) and store in variable result
+     * 5. check if result is equal to target
+     * 5.1. push the index number of first and second in empty array and break the loop
+     * 6. return the array
+     */
+    const input = [3, 3];
+    const target = 6;
+    // output = [0, 1];
+    const arr = [];
+    function findTwoSum(input, target) {
+      for (let i = 0; i < input.length; i++) {
+        let result = input[i] + input[i + 1];
+        if (result === target) {
+          arr.push(i);
+          arr.push(i + 1);
+          break;
+        }
+      }
+      return arr;
+    }
+    console.log(findTwoSum(input, target));
+  </script>
+</html>
